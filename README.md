@@ -2,6 +2,21 @@
 
 Vue.js の Storybook で props の型を指定する。
 
+## [Storybook の args に型付け](https://github.com/ysKuga/vue3-storybook-args/pull/1)
+
+- `Button.vue` より `Button.ts` の分離
+  - 現在時点において `import from 'Button.vue'` とした場合のコンポーネントの型が取得できなかったため
+- `Button.stories.ts` での型指定
+  - `Button.ts` より `import` したものを使用し型を指定
+
+### 型付け対応前
+
+![image](https://user-images.githubusercontent.com/17670283/190837442-696bdebd-c786-44c6-bcd9-ea49f0cf9871.png)
+
+### 型付け対応後
+
+![image](https://user-images.githubusercontent.com/17670283/190837797-88dd92fb-3898-4ce4-a7c0-094ae0f4f0de.png)
+
 ## 設定
 
 ```bash
