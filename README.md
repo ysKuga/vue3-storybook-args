@@ -2,6 +2,14 @@
 
 Vue.js の Storybook で props の型を指定する。
 
+## 設定
+
+```bash
+yarn create vite . --template vue-ts
+yarn
+npx sb init --builder @storybook/builder-vite
+```
+
 <details>
 <summary>Vue 3 + TypeScript + Vite</summary>
 
