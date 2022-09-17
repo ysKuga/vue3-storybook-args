@@ -1,4 +1,10 @@
+import { Meta, StoryFn } from "@storybook/vue3";
+
 import MyButton from "./Button.vue";
+import StoryComponentScript from "./Button";
+
+// https://stackoverflow.com/questions/68602712/extracting-the-prop-types-of-a-component-in-vue-3-typescript-to-use-them-somew#answer-68753574
+type StoryComponentProps = InstanceType<typeof StoryComponentScript>["$props"];
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
@@ -13,10 +19,10 @@ export default {
       options: ["small", "medium", "large"],
     },
   },
-};
+} as Meta<StoryComponentProps>;
 
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
-const Template = (args) => ({
+const Template: StoryFn<StoryComponentProps> = (args) => ({
   // Components used in your story `template` are defined in the `components` object
   components: { MyButton },
   // The story's `args` need to be mapped into the template through the `setup()` method
